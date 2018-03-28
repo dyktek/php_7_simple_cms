@@ -24,7 +24,7 @@
                 <a href="index.php?v=edit_category&id=<?php echo $category['id'] ?>" class="btn btn-success">Edit</a>
             </td>
             <td>
-                <a onclick="confirm('Usunąć ten rekord?')" href="index.php?v=delete_category&id=<?php echo $category['id'] ?>" class="btn btn-danger">Delete</a>
+                <a onclick="return confirm('Usunąć ten rekord?')" href="index.php?v=delete_category&id=<?php echo $category['id'] ?>" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     <?php } ?>
