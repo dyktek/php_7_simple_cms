@@ -1,6 +1,7 @@
 <?php
-include('db/pdo.php');
-include('utils/utils.php');
+require('db/pdo.php');
+require('utils/utils.php');
+require('addons/check_id_in_db.php');
 
 if(array_key_exists('v', $_GET)) {
 	$module = $_GET['v'];

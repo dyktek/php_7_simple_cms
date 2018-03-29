@@ -17,7 +17,6 @@
     <?php
     foreach($categories as $category) {
     ?>
-
         <tr>
             <td><?php echo $category['id'];?></td>
             <td><?php echo $category['name'];?></td>
@@ -25,9 +24,8 @@
                 <a href="index.php?v=edit_category&id=<?php echo $category['id'] ?>" class="btn btn-success">Edit</a>
             </td>
             <td>
-                <a href="index.php?v=delete_category&id=<?php echo $category['id'] ?>" class="btn btn-danger">Delete</a>
+                <a onclick="return confirm('Usunąć ten rekord?')" href="index.php?v=delete_category&id=<?php echo $category['id'] ?>" class="btn btn-danger">Delete</a>
             </td>
         </tr>
-
     <?php } ?>
 </table>

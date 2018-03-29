@@ -9,14 +9,15 @@ if(isset($_POST['name'])) {
 	header('location: index.php?v=categories');
 }
 
-if(!isset($_GET['id'])) {
-	header('location: index.php?v=categories');
+if(!isset($_GET['id']) || !in_array($_GET['id'], $id_array )) {
+    header('location: index.php?v=categories');
+}else{
+    $result = $pdo->prepare('SELECT * FROM categories WHERE id = :id');
+    $result->bindParam(':id', $_GET['id']);
+    $result->execute();
+    $category = $result->fetch();
 }
 
-$result = $pdo->prepare('SELECT * FROM categories WHERE id = :id');
-$result->bindParam(':id', $_GET['id']);
-$result->execute();
-$category = $result->fetch();
 
 ?>
 
